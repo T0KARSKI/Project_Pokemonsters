@@ -118,9 +118,9 @@ body {
     height: 10px; /* Altura da sombra */
     background-color: rgba(0, 0, 0, 0.3); /* Cor da sombra com transparência */
     border-radius: 50%; /* Faz a sombra ser circular */
-    bottom: 25px; /* Posiciona a sombra abaixo do sprite */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para centralização exata */
+    bottom: -5px; /* Posiciona a sombra abaixo do sprite */
+    left: 40%; /* Centraliza horizontalmente */
+    transform: scale(1.5);
     z-index: -1; /* Coloca a sombra atrás do sprite */
 }
 
@@ -128,31 +128,31 @@ body {
 .opponent-sprite::after {
     content: ''; /* Cria um elemento vazio */
     position: absolute;
-    width: 60px; /* Largura da sombra (ajuste individual) */
+    width: 75px; /* Largura da sombra (ajuste individual) */
     height: 10px; /* Altura da sombra (ajuste individual) */
     background-color: rgba(0, 0, 0, 0.4); /* Cor da sombra com transparência */
     border-radius: 50%; /* Faz a sombra ser circular */
-    bottom: 34px; /* Posiciona a sombra abaixo do sprite */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para centralização exata */
+    bottom: -2px; /* Posiciona a sombra abaixo do sprite */
+    left: 16%; /* Centraliza horizontalmente */
+    transform: scale(1.5);
     z-index: -1; /* Coloca a sombra atrás do sprite */
 }
 
 /* Sprite do jogador (Blazer) */
 .player-sprite {
-    background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png');
-    transform: scale(2.5);
-    left: 40px; /* Ajuste a posição horizontal para mover mais para a direita */
-    top: 35%; /* Ajuste a posição vertical para mover mais para baixo */
+    background-image: url('https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-v/black-white/animated/back/25.gif?raw=true');
+    transform: scale(1.0);
+    left: 30px; /* Ajuste a posição horizontal para mover mais para a direita */
+    top: 40%; /* Ajuste a posição vertical para mover mais para baixo */
     z-index: 5; /* Garante que o sprite fique acima da sombra */
 }
 
 /* Sprite do oponente (Wildmon) */
 .opponent-sprite {
-    background-image: url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png');
-    transform: scale(2.5);
-    right: 40px; /* Ajuste a posição horizontal para mover mais para a esquerda */
-    top: 35%; /* Ajuste a posição vertical para mover mais para cima */
+    background-image: url('https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/versions/generation-v/black-white/animated/19.gif?raw=true');
+    transform: scale(1.0);
+    right: 33px; /* Ajuste a posição horizontal para mover mais para a esquerda */
+    top: 30%; /* Ajuste a posição vertical para mover mais para cima */
     z-index: 5; /* Garante que o sprite fique acima da sombra */
 }
 
@@ -240,20 +240,6 @@ body {
     transition: background-color 0.3s;
     margin-top: -50px;
 }
-
-.reset-button {
-    padding: 5px 15px;
-    font-size: 14px;
-    background-color: #555;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    left: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: -50px;
-}
-
 
 .back-button:hover {
     background-color: #333;

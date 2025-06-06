@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const monstersButton = document.getElementById('monsters-button');
     const backButton = document.getElementById('back-button');
     const attackButtons = document.querySelectorAll('.attack-button');
-    const resetButton = document.getElementById('reset-button');
     
     // Elementos de HP
     const playerHpFill = document.getElementById('player-hp-fill');
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { nome: "Scratch", forca: 20 },
             { nome: "Leer", forca: 0 },
             { nome: "Growl", forca: 0 },
-            { nome: "Take Down", forca: 40 }
+            { nome: null, forca: 0 }
         ]
     };
     
@@ -180,29 +179,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     backButton.addEventListener('click', function() {
-        // Esconde o painel de ataques
-        attackPanel.style.display = "none";
-        // Mostra o menu principal
-        mainMenu.style.display = "block";
-        showMessage("O que você deseja fazer?");
-    });
-
-    resetButton.addEventListener('click', function() {
-        // Restaura os valores iniciais dos monstros
-        playerMonstro.hpAtual = playerMonstro.hpMaximo;
-        opponentMonstro.hpAtual = opponentMonstro.hpMaximo;
-    
-        // Atualiza a interface
-        updateHpDisplay();
-        showMessage("O que você deseja fazer?");
-        
-        // Exibe o menu principal e esconde o painel de ataques
-        mainMenu.style.display = "block";
-        attackPanel.style.display = "none";
-    
-        // Reseta o estado do jogo
-        battleActive = false;
-        playerTurn = true;
+        if (!battleActive) {
+            attackPanel.style.display = 'none';
+            mainMenu.style.display = 'flex';
+        } else {
+            showMessage("Oque você deseja fazer?");
+        }
     });
     
     // Event listeners para os botões de ataque
@@ -236,3 +218,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializa a interface
     initializeInterface();
 });
+
+// Exemplo de função para abrir o painel de ataques
+function abrirPainelAtaque() {
+    document.getElementById('main-menu').style.display = 'none';
+    document.getElementById('attack-panel').style.display = 'block';
+}
+document.getElementById('back-button').onclick = function() {
+    document.getElementById('attack-panel').style.display = 'none';
+    document.getElementById('main-menu').style.display = 'flex';
+};
